@@ -1,0 +1,33 @@
+{
+  "name": "raydium-launchlab-farm",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "npx tsc",
+    "automate": "node dist/index.js",
+    "claim-fee":"node dist/commands/claimCreatorFee.js",
+    "cleanup":"node dist/commands/cleanupAccount.js",
+    "unwrap":"node dist/commands/unwrapSol.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "@raydium-io/raydium-sdk-v2": "^0.2.29-alpha",
+    "@solana/web3.js": "^1.98.4",
+    "axios": "^1.12.2",
+    "bn.js": "^5.2.2",
+    "bs58": "^6.0.0",
+    "csv-parse": "^6.1.0",
+    "decimal.js": "^10.6.0",
+    "dotenv": "^17.2.3",
+    "pinata": "^2.5.0"
+  },
+  "devDependencies": {
+    "@types/bn.js": "^5.2.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.2"
+  }
+}

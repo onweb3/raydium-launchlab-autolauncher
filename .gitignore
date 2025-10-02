@@ -1,0 +1,18 @@
+# Ignore node modules everywhere
+**/node_modules/
+node_modules/
+
+# Ignore environment files
+**/.env
+.env
+
+# Ignore contents of resource subdirs, but keep the dirs themselves
+resource/metadata/*
+!resource/metadata/.gitkeep
+
+resource/minted/*
+!resource/minted/.gitkeep
+
+resource/tokens/*
+!resource/tokens/.gitkeep
+
