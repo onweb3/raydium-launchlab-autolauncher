@@ -7,9 +7,9 @@ import {
 import BN from 'bn.js'
 import { LAMPORTS_PER_SOL, PublicKey } from '@solana/web3.js'
 import { NATIVE_MINT } from '@solana/spl-token'
-import {  FEE_RECIEVER, feeBalance, OWNER, PROGRAM_ID, SLIPPAGE } from '../constant'
+import { FEE_RECIEVER, feeBalance, OWNER, PROGRAM_ID, SLIPPAGE, WAIT_FOR_SELL } from '../constant'
 import { initSdk } from '../raydium/raydium'
-import {  getTokenBalanceWithRetry } from './checkTokenBalance'
+import { getTokenBalanceWithRetry } from './checkTokenBalance'
 import { waitMs } from './wait'
 
 
@@ -40,10 +40,10 @@ export async function waitAndSell(tokenAddress: PublicKey) {
     const feeThreshold = Math.floor(feeBalance * LAMPORTS_PER_SOL)
     // Start 30-second loop
     const startTime = Date.now()
-    const timeoutDuration = 30000 // 30 seconds
+    const timeoutDuration = WAIT_FOR_SELL * 1000
     let shouldSell = false
 
-    console.log(`Starting 30-second monitoring before selling on profit. min profit required: ${(feeThreshold / LAMPORTS_PER_SOL).toFixed(4)} SOL\nIf profit criteria is not met then all the holdings will be sold`)
+    console.log(`Starting ${WAIT_FOR_SELL}-second monitoring before selling on profit. min profit required: ${(feeThreshold / LAMPORTS_PER_SOL).toFixed(4)} SOL\nIf profit criteria is not met then all the holdings will be sold`)
 
     while (Date.now() - startTime < timeoutDuration) {
         try {
@@ -102,7 +102,7 @@ export async function waitAndSell(tokenAddress: PublicKey) {
 
     // If timeout reached without exceeding threshold
     if (!shouldSell) {
-        console.log(`30 seconds elapsed. Expected amount never exceeded threshold. Selling all tokens now...`)
+        console.log(`${WAIT_FOR_SELL} seconds elapsed. Expected amount never exceeded threshold. Selling all tokens now...`)
     }
 
     // Execute sell transaction

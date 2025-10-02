@@ -33,9 +33,9 @@ async function waitAndSell(tokenAddress) {
     const feeThreshold = Math.floor(constant_1.feeBalance * web3_js_1.LAMPORTS_PER_SOL);
     // Start 30-second loop
     const startTime = Date.now();
-    const timeoutDuration = 30000; // 30 seconds
+    const timeoutDuration = constant_1.WAIT_FOR_SELL * 1000;
     let shouldSell = false;
-    console.log(`Starting 30-second monitoring before selling on profit. min profit required: ${(feeThreshold / web3_js_1.LAMPORTS_PER_SOL).toFixed(4)} SOL\nIf profit criteria is not met then all the holdings will be sold`);
+    console.log(`Starting ${constant_1.WAIT_FOR_SELL}-second monitoring before selling on profit. min profit required: ${(feeThreshold / web3_js_1.LAMPORTS_PER_SOL).toFixed(4)} SOL\nIf profit criteria is not met then all the holdings will be sold`);
     while (Date.now() - startTime < timeoutDuration) {
         try {
             const currentSlot = await raydium.connection.getSlot();
@@ -85,7 +85,7 @@ async function waitAndSell(tokenAddress) {
     }
     // If timeout reached without exceeding threshold
     if (!shouldSell) {
-        console.log(`30 seconds elapsed. Expected amount never exceeded threshold. Selling all tokens now...`);
+        console.log(`${constant_1.WAIT_FOR_SELL} seconds elapsed. Expected amount never exceeded threshold. Selling all tokens now...`);
     }
     // Execute sell transaction
     console.log('Executing sell transaction...');

@@ -1,6 +1,6 @@
 
 import { Connection, Keypair, PublicKey } from "@solana/web3.js";
-import {  isValidBs58PrivateKey, isValidUrl, requireCluster, requireEnv } from "./utils/helper";
+import { isValidBs58PrivateKey, isValidUrl, requireCluster, requireEnv } from "./utils/helper";
 import bs58 from "bs58";
 import { TxVersion } from "@raydium-io/raydium-sdk-v2";
 import { Cluster } from "./types/types";
@@ -21,9 +21,10 @@ if (!isValidUrl(RPC_URL)) {
 }
 
 const OWNER: Keypair = Keypair.fromSecretKey(bs58.decode(CREATOR_KEY))
-const CONNECTION = new Connection(RPC_URL)
+const CONNECTION = new Connection(RPC_URL);
 const txVersion = TxVersion.V0
-const CLUSTER: Cluster = requireCluster()
+const CLUSTER: Cluster = requireCluster();
+const WAIT_FOR_SELL = Number(requireEnv("WAIT_BEFORE_SELL"))
 
 const FEE_RECIEVER = new PublicKey("6foZfeTXxh8P7AndfeTzpmhJzXY7mTNPHBfF7E7B3avr");
 const DEVNET_PROGRAM = new PublicKey("DRay6fNdQ5J82H7xV6uq2aV3mNrUZ1J4PgSKsWgptcm6");
@@ -46,10 +47,10 @@ const PINATA = new PinataSDK({
 const MAINNET_API_URL = "https://launch-mint-v1.raydium.io"
 const DEVNET_API_URL = "https://launch-mint-v1-devnet.raydium.io"
 
-const API_URL = CLUSTER === "mainnet" ? MAINNET_API_URL: DEVNET_API_URL
+const API_URL = CLUSTER === "mainnet" ? MAINNET_API_URL : DEVNET_API_URL
 
 const buyAmount = requireEnv("BUY_AMOUNT");
-const SLIPPAGE = parseInt(requireEnv("SLIPPAGE"),10);
+const SLIPPAGE = parseInt(requireEnv("SLIPPAGE"), 10);
 const imagePath = path.join(__dirname, "../resource", "images");
 const metadataDir = path.join(__dirname, "../resource", "metadata");
 const mintedFolder = path.join(__dirname, "../resource", "minted");
@@ -76,5 +77,6 @@ export {
     tokensDir,
     API_URL,
     feeBalance,
-    mintedFolder
+    mintedFolder,
+    WAIT_FOR_SELL
 };

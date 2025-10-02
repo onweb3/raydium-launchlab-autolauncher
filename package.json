@@ -6,9 +6,9 @@
   "scripts": {
     "build": "npx tsc",
     "automate": "node dist/index.js",
-    "claim-fee":"node dist/commands/claimCreatorFee.js",
-    "cleanup":"node dist/commands/cleanupAccount.js",
-    "unwrap":"node dist/commands/unwrapSol.js"
+    "claim-fee": "node dist/commands/claimCreatorFee.js",
+    "cleanup": "node dist/commands/cleanupAccount.js",
+    "unwrap": "node dist/commands/unwrapSol.js"
   },
   "keywords": [],
   "author": "",
@@ -16,6 +16,7 @@
   "type": "commonjs",
   "dependencies": {
     "@raydium-io/raydium-sdk-v2": "^0.2.29-alpha",
+    "@solana/spl-token": "^0.4.14",
     "@solana/web3.js": "^1.98.4",
     "axios": "^1.12.2",
     "bn.js": "^5.2.2",

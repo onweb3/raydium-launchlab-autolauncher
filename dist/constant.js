@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.mintedFolder = exports.feeBalance = exports.API_URL = exports.tokensDir = exports.GATEWAY_URL = exports.tokenInfoCsv = exports.metadataDir = exports.imagePath = exports.SLIPPAGE = exports.buyAmount = exports.PINATA = exports.PROGRAM_ID = exports.CPCONFIG = exports.FEE_RECIEVER = exports.CLUSTER = exports.txVersion = exports.CONNECTION = exports.OWNER = void 0;
+exports.WAIT_FOR_SELL = exports.mintedFolder = exports.feeBalance = exports.API_URL = exports.tokensDir = exports.GATEWAY_URL = exports.tokenInfoCsv = exports.metadataDir = exports.imagePath = exports.SLIPPAGE = exports.buyAmount = exports.PINATA = exports.PROGRAM_ID = exports.CPCONFIG = exports.FEE_RECIEVER = exports.CLUSTER = exports.txVersion = exports.CONNECTION = exports.OWNER = void 0;
 const web3_js_1 = require("@solana/web3.js");
 const helper_1 = require("./utils/helper");
 const bs58_1 = __importDefault(require("bs58"));
@@ -27,6 +27,8 @@ const txVersion = raydium_sdk_v2_1.TxVersion.V0;
 exports.txVersion = txVersion;
 const CLUSTER = (0, helper_1.requireCluster)();
 exports.CLUSTER = CLUSTER;
+const WAIT_FOR_SELL = Number((0, helper_1.requireEnv)("WAIT_BEFORE_SELL"));
+exports.WAIT_FOR_SELL = WAIT_FOR_SELL;
 const FEE_RECIEVER = new web3_js_1.PublicKey("6foZfeTXxh8P7AndfeTzpmhJzXY7mTNPHBfF7E7B3avr");
 exports.FEE_RECIEVER = FEE_RECIEVER;
 const DEVNET_PROGRAM = new web3_js_1.PublicKey("DRay6fNdQ5J82H7xV6uq2aV3mNrUZ1J4PgSKsWgptcm6");
