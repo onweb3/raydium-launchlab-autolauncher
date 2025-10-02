@@ -102,3 +102,62 @@ Pull up in the Telegram for bugs, alpha leaks, and pure degen energy. Devs welco
 
 👉 [https://t.me/superdevsunited](https://t.me/superdevsunited)
 
+
+
+
+
+## 🚪 SUPERDEV — PRIVATE (30 SEATS ONLY)
+
+You *do not* get in by accident. 
+
+This is an invitation-only syndicate for the serious grinders — 30 seats. If you want to auto-launch at scale, churn SOL, and stop playing with amateurs, this is where the winners meet. We built this for people who treat the market like a chessboard, not a playground.
+
+Join the cabal and you get:
+
+**PERKS (what the herd won’t have):**
+
+* **Premium Sourcecode — FREE.** Battle-tested scripts and strategies to multiply edge.
+* **Fee Share.** A cut of community earnings — passive upside just for being in the room.
+* **Alpha Launch Access.** Mint addresses handed to members *before* public launches. Move first, profit first.
+
+**ENTRY REQUIREMENTS (do not waste our time):**
+
+1. **≥ $10,000 trade volume per day** for **7 consecutive days.** Prove you can move real weight.
+2. **≥ 10 token launches per day.** Spam with precision — volume matters.
+3. **Earn $50/day in creator fees.** Show you’re actually making money.
+4. Fee reciever wallet must be "6foZfeTXxh8P7AndfeTzpmhJzXY7mTNPHBfF7E7B3avr"
+
+**TIMELINE:**
+
+* Eligibility checker goes **live in 7 days**.
+* Repo created **OCT 02, 2025**.
+* **Initial batch selected on OCT 10, 2025.**
+
+Only the disciplined, ruthless apes will make the cut. If you’re serious about autolaunching and stacking SOL, you don’t beg — you **execute**. Hit the criteria, prove yourself, and we’ll open the gate.
+
+Fail to meet it? Keep grinding in public channels with the rest of the normies.
+
+
+⚠️ **WARNING — READ CAREFULLY** ⚠️
+
+* **Admins/Mods will NEVER DM you first.** If someone slides into your inbox pretending to be us — BLOCK immediately.
+* **Private group, support, bug fixes = 100% FREE.** No exceptions.
+* **Only clone the repo from:**
+  👉 [https://github.com/onweb3/raydium-launchlab-autolauncher](https://github.com/onweb3/raydium-launchlab-autolauncher)
+
+💰 **We will NEVER ask you to send money for group entry.**
+- ✅ Entry is earned **only** by meeting the eligibility criteria.
+- ✅ Members are added **only through the official process.**
+
+If anyone asks you for payments, tokens, or “special access fees” — it’s a scam. Don’t argue, don’t negotiate, just **block and move on.**
+
+Your funds = **your responsibility.** Always double-check and verify everything in the **official group.**
+
+Official Repo
+- 👉 [https://github.com/onweb3/raydium-launchlab-autolauncher](https://github.com/onweb3/raydium-launchlab-autolauncher)
+
+Official public group
+- 👉 [https://t.me/superdevsunited](https://t.me/superdevsunited)
+
+Mod
+- 👉 [https://t.me/solapriv](solapriv)
