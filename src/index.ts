@@ -1,9 +1,12 @@
 import { CONNECTION, OWNER } from "./constant";
 import { collectAllCreatorFees } from "./raydium/claimFee";
 import { checkBalance } from "./utils/check";
+import { ensureDirectories } from "./utils/checkDir";
+import { hasValidImages } from "./utils/checkImagesExists";
 import { cleanupAllEmptyTokenAccounts } from "./utils/cleanUp";
 import { createMetaData } from "./utils/createMetadata";
 import { createToken } from "./utils/createToken";
+import { isCsvValid } from "./utils/isValidCsv";
 import { waitMs } from "./utils/wait";
 import { waitAndSell } from "./utils/waitAndSell";
 import { unwrapSol } from "./utils/wsolUtils";
@@ -11,6 +14,14 @@ import { unwrapSol } from "./utils/wsolUtils";
 async function main() {
     while (true) {
         try {
+            ensureDirectories();
+            if (!hasValidImages()) {
+                console.log("add a valid image file to the resource/images folder\n supported extensions :.png .jpg .jpeg .webp .gif")
+                process.exit();
+            }
+            if (!isCsvValid()) {
+                console.log("invalid csv:\n please refer to this link for valid csv file\nhttps://github.com/onweb3/Raydium-Launchlab-AutoLauncher-Trade-fee-Farmer/blob/main/resource/tokensInfo.csv")
+            }
             await checkBalance();
             const tokenInfo = await createMetaData();
             await createToken(tokenInfo);

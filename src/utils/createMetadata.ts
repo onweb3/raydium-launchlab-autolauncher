@@ -2,7 +2,7 @@ import fs from "fs";
 import path from "path";
 import { upload } from "./piniata";
 import { Keypair } from "@solana/web3.js";
-import { GATEWAY_URL, imagePath, metadataDir, tokenInfoCsv, tokensDir } from "../constant";
+import { imagePath, metadataDir, tokenInfoCsv, tokensDir } from "../constant";
 import { getRandomTokenInfo } from "./getRandomTokenInfo";
 import { getRandomImage } from "./getRandomImage";
 import { TokenInfo } from "../types/token";
@@ -10,7 +10,7 @@ export async function createMetaData() {
     const imagePatha = getRandomImage(imagePath, [".png", ".jpg", ".jpeg", ".webp", ".gif"]);
     console.log("🖼️ Selected image:", imagePath);
 
-   
+
     const imageUpload = await upload(imagePatha);
     const imageUri = `https://ipfs.io/ipfs/${imageUpload.cid}`;
     if (!fs.existsSync(metadataDir)) fs.mkdirSync(metadataDir);
@@ -19,7 +19,7 @@ export async function createMetaData() {
         name: tokenMeta.name,
         symbol: tokenMeta.symbol,
         description: tokenMeta?.description,
-        createdOn:"https://gemhunt.fun",
+        createdOn: "https://gemhunt.fun",
         image: imageUri
     };
     const mint = Keypair.generate();
@@ -45,5 +45,5 @@ export async function createMetaData() {
     fs.writeFileSync(tokenDataPath, JSON.stringify(tokenInfo, null, 2));
 
     return tokenInfo
-    
+
 }
