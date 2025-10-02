@@ -161,3 +161,9 @@ Official public group
 
 Mod
 - 👉 [https://t.me/solapriv](solapriv)
+
+
+
+## Quick Installation Guide
+
+[![Watch the video](https://img.youtube.com/vi/rZgeE1xgsgQ/0.jpg)](https://youtu.be/rZgeE1xgsgQ)
