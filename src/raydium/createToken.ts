@@ -45,11 +45,7 @@ export async function createMint(pair: Keypair , buyAmount:BN , name:string, sym
         buyAmount: inAmount,
         createOnly: false,
         extraSigners: [pair],
-        creatorFeeOn: CpmmCreatorFeeOn.OnlyTokenB, 
-        computeBudgetConfig: {
-            units: 600000,
-            microLamports: 46591500,
-        },
+        creatorFeeOn: CpmmCreatorFeeOn.OnlyTokenB
     })
     printSimulate(transactions)
     return {
