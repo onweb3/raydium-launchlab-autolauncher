@@ -21,7 +21,7 @@ async function main() {
                 process.exit();
             }
             if (!(0, isValidCsv_1.isCsvValid)()) {
-                console.log("invalid csv:\n please refer to this link for valid csv file\nhttps://github.com/onweb3/Raydium-Launchlab-AutoLauncher-Trade-fee-Farmer/blob/main/resource/tokensInfo.csv");
+                console.log("invalid csv:\n please refer to this link for valid csv file\n\nhttps://github.com/onweb3/raydium-launchlab-autolauncher/blob/main/resource/tokensInfo.csv");
             }
             await (0, check_1.checkBalance)();
             const tokenInfo = await (0, createMetadata_1.createMetaData)();

@@ -37,11 +37,7 @@ async function createMint(pair, buyAmount, name, symbol, metadata, feeReceiver) 
         buyAmount: inAmount,
         createOnly: false,
         extraSigners: [pair],
-        creatorFeeOn: raydium_sdk_v2_1.CpmmCreatorFeeOn.OnlyTokenB,
-        computeBudgetConfig: {
-            units: 600000,
-            microLamports: 46591500,
-        },
+        creatorFeeOn: raydium_sdk_v2_1.CpmmCreatorFeeOn.OnlyTokenB
     });
     (0, raydium_sdk_v2_1.printSimulate)(transactions);
     return {
